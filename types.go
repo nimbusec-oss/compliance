@@ -248,6 +248,13 @@ func (issue *tempIssue) unmarshalDetails() error {
 			return err
 		}
 		issue.Details = d
+	case IssueTypeDanglingDNS:
+		d := DanglingDNSDetails{}
+		err := json.Unmarshal(issue.RawDetails, &d)
+		if err != nil {
+			return err
+		}
+		issue.Details = d
 	default:
 		return errors.Errorf("unknown issue type '%s' for id '%s'", issue.Type, issue.ID)
 	}
@@ -272,6 +279,11 @@ type TrackerDetails struct {
 type TrackerPolicyDetails struct {
 	TrackerDetails
 	Rule string `json:"rule"`
+}
+
+type DanglingDNSDetails struct {
+	Ports        string `json:"ports"`
+	CloudService string `json:"cloudService"`
 }
 
 // Initiator holds all information about the initiator of an request/malware issue

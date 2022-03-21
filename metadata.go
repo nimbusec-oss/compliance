@@ -26,6 +26,6 @@ func (srv MetadataService) List(filter *MetadataFilter) ([]Metadata, error) {
 
 func (srv MetadataService) Get(assetID string) (Metadata, error) {
 	metadata := Metadata{}
-	err := srv.client.Do(http.MethodGet, "/assets/"+assetID+"/metadata", nil, &metadata)
+	err := srv.client.Do(http.MethodGet, "/api/v1/assets/"+assetID+"/metadata", nil, &metadata)
 	return metadata, err
 }

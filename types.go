@@ -30,6 +30,7 @@ type AssetFilter struct {
 	Name      []string `json:"name"` // idfy
 	Origin    []string `json:"origin"`
 	CreatedAt []string `json:"createdAt"`
+	Contact   []string `json:"contact"` // contact mail
 }
 
 type DisabledAsset struct {

@@ -148,6 +148,7 @@ type AssetInfoApplication struct {
 	Source     string `json:"source"`
 	Latest     bool   `json:"latest"`
 	Vulnerable bool   `json:"vulnerable"`
+	Consented  bool   `json:"consented"`
 }
 
 type AssetInfoType string
@@ -275,6 +276,7 @@ type TrackerDetails struct {
 	Hostname   string          `json:"hostname"`
 	Initiators [][]Initiator   `json:"initiators"`
 	Visited    bool            `json:"visited"`
+	Consented  bool            `json:"consented"`
 }
 
 type TrackerPolicyDetails struct {
@@ -338,6 +340,7 @@ type CookieDetails struct {
 	InGlobalWhitelist bool       `json:"inGlobalWhitelist"`
 	InCustomWhitelist bool       `json:"inCustomWhitelist"`
 	InServerResponse  bool       `json:"inServerResponse"`
+	Consented         bool       `json:"consented"`
 }
 
 type URLValue struct {

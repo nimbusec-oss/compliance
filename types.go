@@ -151,6 +151,13 @@ type AssetInfoApplication struct {
 	Consented  bool   `json:"consented"`
 }
 
+type AssetInfoLinks struct {
+	External       int `json:"external"`
+	Internal       int `json:"internal"`
+	BrokenExternal int `json:"brokenExternal"`
+	BrokenInternal int `json:"brokenInternal"`
+}
+
 type AssetInfoType string
 type AssetInfo struct {
 	AssetID   string        `json:"assetID"`

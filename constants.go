@@ -24,4 +24,5 @@ const (
 	AssetInfoTypeValidation  AssetInfoType = "validation"
 	AssetInfoTypeDiscovery   AssetInfoType = "discovery"
 	AssetInfoTypeApplication AssetInfoType = "application"
+	AssetInfoTypeLinks       AssetInfoType = "links"
 )

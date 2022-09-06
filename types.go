@@ -152,10 +152,11 @@ type AssetInfoApplication struct {
 }
 
 type AssetInfoLinks struct {
-	External       int `json:"external"`
-	Internal       int `json:"internal"`
-	BrokenExternal int `json:"brokenExternal"`
-	BrokenInternal int `json:"brokenInternal"`
+	External       int      `json:"external"`
+	Internal       int      `json:"internal"`
+	BrokenExternal int      `json:"brokenExternal"`
+	BrokenInternal int      `json:"brokenInternal"`
+	Links          []string `json:"links"`
 }
 
 type AssetInfoType string

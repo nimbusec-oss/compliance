@@ -18,6 +18,7 @@ type Asset struct {
 }
 
 type AssetPatch struct {
+	IDfy      string  `json:"idfy"`
 	CBundleID *string `json:"cBundleID"`
 	Origin    string  `json:"origin"`
 	ContactID *string `json:"contactID"`

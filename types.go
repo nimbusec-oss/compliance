@@ -24,6 +24,11 @@ type AssetPatch struct {
 	ContactID *string `json:"contactID"`
 }
 
+type AssetPost struct {
+	AssetPatch
+	ExternalID *string `json:"externalID"`
+}
+
 type AssetFilter struct {
 	OnlySecurity   bool `json:"onlySecurity"`   // only security assets
 	OnlyCompliance bool `json:"onlyCompliance"` // only compliance assets

@@ -25,13 +25,8 @@ type AssetPatch struct {
 }
 
 type AssetPost struct {
-	ID         string    `json:"id"`
-	IDfy       string    `json:"idfy"`
-	Origin     string    `json:"origin"`
-	CBundleID  *string   `json:"cBundleID"`
-	CreatedAt  time.Time `json:"createdAt"`
-	ContactID  *string   `json:"contactID"`
-	ExternalID *string   `json:"externalID"`
+	Asset
+	ExternalID *string `json:"externalID"`
 }
 
 type AssetFilter struct {

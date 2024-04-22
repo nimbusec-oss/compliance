@@ -25,7 +25,7 @@ type AssetPatch struct {
 }
 
 type AssetPost struct {
-	Asset
+	AssetPatch
 	ExternalID *string `json:"externalID"`
 }
 

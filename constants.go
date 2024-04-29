@@ -17,6 +17,7 @@ const (
 	IssueStatusPending IssueStatus = 1
 	IssueStatusOK      IssueStatus = 2 // acknowledged status
 	IssueStatusIgnored IssueStatus = 3
+	IssueStatusAutoOK  IssueStatus = 7
 )
 
 const (

@@ -3,7 +3,6 @@ package compliance
 import (
 	"net/http"
 	"net/url"
-	"strings"
 
 	"github.com/google/go-querystring/query"
 )
@@ -17,7 +16,7 @@ func (srv IssueService) List(filter *IssueFilter) ([]Issue, error) {
 	}
 	u := url.URL{
 		Path:     "/api/v1/issues",
-		RawQuery: strings.ToLower(v.Encode()),
+		RawQuery: v.Encode(),
 	}
 
 	issues := []tempIssue{}

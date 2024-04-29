@@ -279,7 +279,7 @@ func (issue *tempIssue) unmarshalDetails() error {
 }
 
 type IssueFilter struct {
-	Statuses  []IssueStatus `json:"statuses"`
+	Statuses  []IssueStatus `json:"statuses" url:"status"`
 	Externals []string      `json:"externals"`
 }
 

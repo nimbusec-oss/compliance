@@ -24,8 +24,6 @@ func (srv AssetDisabledService) List(filter *DisabledAssetFilter) ([]DisabledAss
 	return disabled, err
 }
 
-func (srv AssetDisabledService) Enable(assetID string) (DisabledAsset, error) {
-	disabled := DisabledAsset{}
-	err := srv.client.Do(http.MethodPost, "/api/v1/assets-disabled/"+assetID+"/enable", nil, &disabled)
-	return disabled, err
+func (srv AssetDisabledService) Enable(assetID string) error {
+	return srv.client.Do(http.MethodPost, "/api/v1/assets-disabled/"+assetID+"/enable", nil, nil)
 }

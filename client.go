@@ -4,6 +4,8 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
+	"fmt"
+	"io"
 	"net/http"
 
 	"golang.org/x/oauth2/clientcredentials"
@@ -125,12 +127,21 @@ func (client *Client) Do(method, path string, in, out interface{}) error {
 
 	// check for api errors, try to decode in error object
 	if resp.StatusCode >= 300 {
-		msg := Error{}
-		err = json.NewDecoder(resp.Body).Decode(&msg)
+		buf := []byte{}
+		_, err = io.ReadFull(resp.Body, buf)
 		if err != nil {
 			return err
 		}
 
+		msg := Error{}
+		err = json.Unmarshal(buf, &msg)
+		if err != nil {
+			msg := string(buf)
+			if len(msg) > 1000 {
+				msg = msg[:1000]
+			}
+			return fmt.Errorf("message %s could not be decode into err: %w", msg, err)
+		}
 		return msg
 	}
 

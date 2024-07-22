@@ -271,6 +271,13 @@ func (issue *tempIssue) unmarshalDetails() error {
 			return err
 		}
 		issue.Details = d
+	case IssueTypeTakeoverDNS:
+		d := TakeoverDNSDetails{}
+		err := json.Unmarshal(issue.RawDetails, &d)
+		if err != nil {
+			return err
+		}
+		issue.Details = d
 	default:
 		return errors.Errorf("unknown issue type '%s' for id '%s'", issue.Type, issue.ID)
 	}
@@ -369,6 +376,12 @@ type CookiePolicyDetails struct {
 type ContentPolicyDetails struct {
 	URL  string `json:"url"`
 	Rule string `json:"rule"`
+}
+
+type TakeoverDNSDetails struct {
+	CName       string   `json:"cname"`
+	Service     string   `json:"service"`
+	NameServers []string `json:"nameservers"`
 }
 
 type IssuePatch struct {

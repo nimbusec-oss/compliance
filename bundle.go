@@ -1,6 +1,8 @@
 package compliance
 
-import "net/http"
+import (
+	"net/http"
+)
 
 type BundleService service
 

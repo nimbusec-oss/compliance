@@ -119,7 +119,7 @@ func (client *Client) Do(method, path string, in, out interface{}) error {
 	req = req.WithContext(context.Background())
 	resp, err := client.http.Do(req)
 	if err != nil {
-		return err
+		return fmt.Errorf("%d | %v", resp.StatusCode, err)
 	}
 
 	// decode response body into `out` object if provided
@@ -130,25 +130,21 @@ func (client *Client) Do(method, path string, in, out interface{}) error {
 		buf := []byte{}
 		_, err = io.ReadFull(resp.Body, buf)
 		if err != nil {
-			return err
+			return fmt.Errorf("%d | %v", resp.StatusCode, err)
 		}
 
 		msg := Error{}
 		err = json.Unmarshal(buf, &msg)
 		if err != nil {
-			msg := string(buf)
-			if len(msg) > 1000 {
-				msg = msg[:1000]
-			}
-			return fmt.Errorf("message %s could not be decode into err: %w", msg, err)
+			return fmt.Errorf("message %s could not be decoded into err: %w | Statuscode was: %d", string(buf), err, resp.StatusCode)
 		}
-		return msg
+		return fmt.Errorf("%d | %v", resp.StatusCode, err)
 	}
 
 	if out != nil {
 		err = json.NewDecoder(resp.Body).Decode(&out)
 		if err != nil {
-			return err
+			return fmt.Errorf("%d | %v", resp.StatusCode, err)
 		}
 	}
 

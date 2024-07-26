@@ -98,7 +98,7 @@ func (client *Client) Do(method, path string, in, out interface{}) error {
 		body := &bytes.Buffer{}
 		err = json.NewEncoder(body).Encode(in)
 		if err != nil {
-			return fmt.Errorf("Encode request body: %s", err)
+			return fmt.Errorf("Encode request body: %w", err)
 		}
 
 		req, err = http.NewRequest(method, client.base+path, body)
@@ -107,7 +107,7 @@ func (client *Client) Do(method, path string, in, out interface{}) error {
 	}
 
 	if err != nil {
-		return fmt.Errorf("NewRequest: %s", err)
+		return fmt.Errorf("NewRequest: %w", err)
 	}
 
 	// dry mode active, do not make an action except for read-only GET requests
@@ -119,7 +119,7 @@ func (client *Client) Do(method, path string, in, out interface{}) error {
 	req = req.WithContext(context.Background())
 	resp, err := client.http.Do(req)
 	if err != nil {
-		return fmt.Errorf("Client.Do: %s", err)
+		return fmt.Errorf("Client.Do: %w", err)
 	}
 
 	// decode response body into `out` object if provided

@@ -117,6 +117,7 @@ func (client *Client) Do(method, path string, in, out interface{}) error {
 
 	// perform request
 	req = req.WithContext(context.Background())
+	req.Close = true
 	resp, err := client.http.Do(req)
 	if err != nil {
 		return fmt.Errorf("Client.Do: %w", err)

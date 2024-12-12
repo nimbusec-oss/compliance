@@ -12,6 +12,7 @@ const (
 	IssueTypeComplianceTrackerPolicy IssueType = "compliance_tracker_policy"
 	IssueTypeDanglingDNS             IssueType = "dangling-dns"
 	IssueTypeTakeoverDNS             IssueType = "takeover-dns"
+	IssueTypeDanglingCName           IssueType = "dangling-cname"
 )
 
 const (

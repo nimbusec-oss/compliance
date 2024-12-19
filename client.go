@@ -119,7 +119,7 @@ func (client *Client) Do(method, path string, in, out interface{}) error {
 	req = req.WithContext(context.Background())
 	resp, err := client.http.Do(req)
 	if err != nil {
-		return fmt.Errorf("Client.Do: %w", err)
+		return fmt.Errorf("Client.Do: %w | %d", err, resp.StatusCode)
 	}
 
 	// decode response body into `out` object if provided

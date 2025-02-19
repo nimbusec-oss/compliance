@@ -10,9 +10,11 @@ const (
 	IssueTypeComplianceStatusCode    IssueType = "compliance_status_code"
 	IssueTypeComplianceTrackerOptIn  IssueType = "compliance_tracker_opt_in"
 	IssueTypeComplianceTrackerPolicy IssueType = "compliance_tracker_policy"
-	IssueTypeDanglingDNS             IssueType = "dangling-dns"
-	IssueTypeTakeoverDNS             IssueType = "takeover-dns"
-	IssueTypeDanglingCName           IssueType = "dangling-cname"
+	IssueTypeComplianceLocalStorage  IssueType = "compliance_local_storage"
+
+	IssueTypeDanglingDNS   IssueType = "dangling-dns"
+	IssueTypeTakeoverDNS   IssueType = "takeover-dns"
+	IssueTypeDanglingCName IssueType = "dangling-cname"
 )
 
 const (

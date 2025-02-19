@@ -264,7 +264,7 @@ func (issue *tempIssue) unmarshalDetails() error {
 			return err
 		}
 		issue.Details = d
-	case IssueTypeComplianceLocalStorage:
+	case IssueTypeComplianceLocalStorageOptIn:
 		d := LocalStorageDetails{}
 		err := json.Unmarshal(issue.RawDetails, &d)
 		if err != nil {

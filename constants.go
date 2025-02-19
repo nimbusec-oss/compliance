@@ -1,16 +1,16 @@
 package compliance
 
 const (
-	IssueTypeComplianceContentPolicy IssueType = "compliance_content_policy"
-	IssueTypeComplianceCookieOptIn   IssueType = "compliance_cookie_opt_in"
-	IssueTypeComplianceCookiePolicy  IssueType = "compliance_cookie_policy"
-	IssueTypeComplianceFormHTTP      IssueType = "compliance_form_http"
-	IssueTypeComplianceFormExternal  IssueType = "compliance_form_external"
-	IssueTypeComplianceFormSensitive IssueType = "compliance_form_sensitive"
-	IssueTypeComplianceStatusCode    IssueType = "compliance_status_code"
-	IssueTypeComplianceTrackerOptIn  IssueType = "compliance_tracker_opt_in"
-	IssueTypeComplianceTrackerPolicy IssueType = "compliance_tracker_policy"
-	IssueTypeComplianceLocalStorage  IssueType = "compliance_local_storage"
+	IssueTypeComplianceContentPolicy     IssueType = "compliance_content_policy"
+	IssueTypeComplianceCookieOptIn       IssueType = "compliance_cookie_opt_in"
+	IssueTypeComplianceCookiePolicy      IssueType = "compliance_cookie_policy"
+	IssueTypeComplianceFormHTTP          IssueType = "compliance_form_http"
+	IssueTypeComplianceFormExternal      IssueType = "compliance_form_external"
+	IssueTypeComplianceFormSensitive     IssueType = "compliance_form_sensitive"
+	IssueTypeComplianceStatusCode        IssueType = "compliance_status_code"
+	IssueTypeComplianceTrackerOptIn      IssueType = "compliance_tracker_opt_in"
+	IssueTypeComplianceTrackerPolicy     IssueType = "compliance_tracker_policy"
+	IssueTypeComplianceLocalStorageOptIn IssueType = "compliance_local_storage_opt_in"
 
 	IssueTypeDanglingDNS   IssueType = "dangling-dns"
 	IssueTypeTakeoverDNS   IssueType = "takeover-dns"

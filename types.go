@@ -264,6 +264,13 @@ func (issue *tempIssue) unmarshalDetails() error {
 			return err
 		}
 		issue.Details = d
+	case IssueTypeComplianceLocalStorageOptIn:
+		d := LocalStorageDetails{}
+		err := json.Unmarshal(issue.RawDetails, &d)
+		if err != nil {
+			return err
+		}
+		issue.Details = d
 	case IssueTypeDanglingDNS:
 		d := DanglingDNSDetails{}
 		err := json.Unmarshal(issue.RawDetails, &d)
@@ -369,6 +376,13 @@ type CookieDetails struct {
 	InCustomWhitelist bool       `json:"inCustomWhitelist"`
 	InServerResponse  bool       `json:"inServerResponse"`
 	Consented         bool       `json:"consented"`
+}
+
+type LocalStorageDetails struct {
+	URL               string `json:"url"`
+	Key               string `json:"key"`
+	Value             string `json:"value"`
+	InCustomWhitelist bool   `json:"inCustomWhitelist"`
 }
 
 type URLValue struct {

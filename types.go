@@ -320,8 +320,8 @@ type TrackerPolicyDetails struct {
 }
 
 type DanglingDNSDetails struct {
-	Ports        string `json:"ports"`
-	CloudService string `json:"cloudService"`
+	Ports        []uint16 `json:"ports"`
+	CloudService string   `json:"cloudService"`
 }
 
 // Initiator holds all information about the initiator of an request/malware issue

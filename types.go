@@ -364,25 +364,22 @@ type InputDetails struct {
 }
 
 type CookieDetails struct {
-	Name              string     `json:"name"`
-	URLValues         []URLValue `json:"urlValues"` // URLValues[value]{url,url...}
-	Domain            string     `json:"domain"`
-	HTTPOnly          bool       `json:"httpOnly"`
-	Lifetime          int64      `json:"lifetime"`
-	SameSite          string     `json:"sameSite"`
-	Secure            bool       `json:"secure"`
-	ThirdParty        bool       `json:"thirdParty"`
-	InGlobalWhitelist bool       `json:"inGlobalWhitelist"`
-	InCustomWhitelist bool       `json:"inCustomWhitelist"`
-	InServerResponse  bool       `json:"inServerResponse"`
-	Consented         bool       `json:"consented"`
+	Name             string     `json:"name"`
+	URLValues        []URLValue `json:"urlValues"` // URLValues[value]{url,url...}
+	Domain           string     `json:"domain"`
+	HTTPOnly         bool       `json:"httpOnly"`
+	Lifetime         int64      `json:"lifetime"`
+	SameSite         string     `json:"sameSite"`
+	Secure           bool       `json:"secure"`
+	ThirdParty       bool       `json:"thirdParty"`
+	InServerResponse bool       `json:"inServerResponse"`
+	Consented        bool       `json:"consented"`
 }
 
 type LocalStorageDetails struct {
-	URL               string `json:"url"`
-	Key               string `json:"key"`
-	Value             string `json:"value"`
-	InCustomWhitelist bool   `json:"inCustomWhitelist"`
+	URL   string `json:"url"`
+	Key   string `json:"key"`
+	Value string `json:"value"`
 }
 
 type URLValue struct {

@@ -311,7 +311,6 @@ type TrackerDetails struct {
 	Hostname   string          `json:"hostname"`
 	Initiators [][]Initiator   `json:"initiators"`
 	Visited    bool            `json:"visited"`
-	Consented  bool            `json:"consented"`
 }
 
 type TrackerPolicyDetails struct {

@@ -372,7 +372,6 @@ type CookieDetails struct {
 	Secure           bool       `json:"secure"`
 	ThirdParty       bool       `json:"thirdParty"`
 	InServerResponse bool       `json:"inServerResponse"`
-	Consented        bool       `json:"consented"`
 }
 
 type LocalStorageDetails struct {

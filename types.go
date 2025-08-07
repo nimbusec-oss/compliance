@@ -343,7 +343,7 @@ type FormDetails struct {
 	FormID           string         `json:"formID,omitempty"`
 	Action           string         `json:"action"`
 	Method           string         `json:"method"`
-	InputFields      []InputDetails `json:"inputDetails"`
+	InputDetails     []InputDetails `json:"inputDetails"`
 	HTTPTransmit     bool           `json:"httpTransmit"`
 	ExternalTransmit bool           `json:"externalTransmit"`
 	// if it contains input fields that violates either art 9 or 10 once

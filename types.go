@@ -311,7 +311,6 @@ type TrackerDetails struct {
 	Hostname   string          `json:"hostname"`
 	Initiators [][]Initiator   `json:"initiators"`
 	Visited    bool            `json:"visited"`
-	Consented  bool            `json:"consented"`
 }
 
 type TrackerPolicyDetails struct {
@@ -373,7 +372,6 @@ type CookieDetails struct {
 	Secure           bool       `json:"secure"`
 	ThirdParty       bool       `json:"thirdParty"`
 	InServerResponse bool       `json:"inServerResponse"`
-	Consented        bool       `json:"consented"`
 }
 
 type LocalStorageDetails struct {

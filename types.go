@@ -292,6 +292,13 @@ func (issue *tempIssue) unmarshalDetails() error {
 			return err
 		}
 		issue.Details = d
+	case IssueTypeSocialMedia:
+		d := SocialMediaDetails{}
+		err := json.Unmarshal(issue.RawDetails, &d)
+		if err != nil {
+			return err
+		}
+		issue.Details = d
 	default:
 		return errors.Errorf("unknown issue type '%s' for id '%s'", issue.Type, issue.ID)
 	}
@@ -402,6 +409,11 @@ type TakeoverDNSDetails struct {
 
 type DanglingCNameDetails struct {
 	CName string `json:"cname"`
+}
+
+type SocialMediaDetails struct {
+	SocialLink string   `json:"socialLink"`
+	Initiators []string `json:"initiators"`
 }
 
 type IssuePatch struct {

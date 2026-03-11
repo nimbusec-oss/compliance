@@ -15,6 +15,7 @@ const (
 	IssueTypeDanglingDNS   IssueType = "dangling-dns"
 	IssueTypeTakeoverDNS   IssueType = "takeover-dns"
 	IssueTypeDanglingCName IssueType = "dangling-cname"
+	IssueTypeSocialMedia   IssueType = "socialmedia"
 )
 
 const (
